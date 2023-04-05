@@ -1,0 +1,23 @@
+<mat-toolbar color="primary">
+  <mat-toolbar-row>
+    <span>Оставьте свой отзыв о докладе!</span>
+  </mat-toolbar-row>
+</mat-toolbar>
+
+<div class="container">
+  <form [formGroup]="commentForm" (ngSubmit)="onSubmit()">
+    <mat-form-field appearance="fill" class="full-width">
+      <mat-label>Напишите свое мнение...</mat-label>
+      <textarea matInput formControlName="comment" rows="5"></textarea>
+    </mat-form-field>
+    <button mat-raised-button color="primary" type="submit">Отправить</button>
+  </form>
+
+  <div *ngIf="formattedComment" class="formatted-comment">
+    <mat-card>
+      <mat-card-content>
+        {{ formattedComment }}
+      </mat-card-content>
+    </mat-card>
+  </div>
+</div>
