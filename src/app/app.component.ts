@@ -22,15 +22,15 @@ export class AppComponent {
   onSubmit() {
     if (this.commentForm.valid) {
       const comment = this.commentForm.value.comment;
-      // const prompt = `Сделай этот комментарий позитивным, дружелюбным, а так же добавь благодарность разработчику проекта Валентине: ${comment}`;
-      const prompt = `I have got a comment about our report. I want you to analize this comment. If this comment is friendly - print exactly this comment.
-      If this comment is not friendly, make this comment friendly, positive and add gratitude to the report's authors using Russian language. Here is the comment: ${comment}`;
+      // стишки даже 4рка генерит так себе
+      // const prompt = `Напиши четверостишье, используя этот комментарий: ${comment}`;
+      const prompt = `I have got a comment about our report. I want you to analize this comment. Make this comment friendly, positive and add gratitude to the report's authors using Russian language. Here is the comment: ${comment}`;
       this.getRewrittenComment(prompt);
     }
   }
 
   async getRewrittenComment(prompt: string) {
-    const apiKey = 'api-key';
+    const apiKey = 'your OPEN AI API key';
     const apiUrl = 'https://api.openai.com/v1/completions';
 
     const headers = {
